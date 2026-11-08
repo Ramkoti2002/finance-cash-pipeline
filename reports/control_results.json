@@ -1,0 +1,5 @@
+{
+  "one_cent_net_cash_error": "monthly_cash_reconciles",
+  "duplicate_payment_id": "unique_stg_payments_payment_id",
+  "payment_without_matching_order": "payment_order_consistency"
+}

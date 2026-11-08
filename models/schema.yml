@@ -1,0 +1,24 @@
+version: 2
+models:
+  - name: stg_orders
+    description: One row per synthetic order with its booked amount in integer cents.
+    columns:
+      - name: order_id
+        data_tests: [not_null, unique]
+  - name: stg_payments
+    description: One row per charge or refund event. Amounts are unsigned cents.
+    columns:
+      - name: payment_id
+        data_tests: [not_null, unique]
+  - name: fct_cash_activity
+    description: One row per eligible payment event. Refunds have a negative signed amount.
+    columns:
+      - name: payment_id
+        data_tests: [not_null, unique]
+      - name: signed_amount_cents
+        data_tests: [not_null]
+  - name: monthly_cash_summary
+    description: One row per payment calendar month, with charges, refunds, and net cash in cents.
+    columns:
+      - name: cash_month
+        data_tests: [not_null, unique]

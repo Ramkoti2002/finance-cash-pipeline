@@ -1,0 +1,31 @@
+name: finance_cash_pipeline
+version: '1.0.0'
+config-version: 2
+profile: finance_cash_pipeline
+model-paths: ['models']
+seed-paths: ['seeds']
+test-paths: ['tests']
+clean-targets: ['target', 'logs']
+
+models:
+  finance_cash_pipeline:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  finance_cash_pipeline:
+    orders:
+      +column_types:
+        order_id: bigint
+        order_date: varchar
+        order_status: varchar
+        order_amount_cents: bigint
+    payments:
+      +column_types:
+        payment_id: bigint
+        order_id: bigint
+        payment_date: varchar
+        payment_type: varchar
+        amount_cents: bigint

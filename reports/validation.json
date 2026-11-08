@@ -1,0 +1,10 @@
+{
+  "dataset": "synthetic",
+  "dbt_data_tests_passed": 16,
+  "independent_monthly_reconciliation": "passed",
+  "months": 12,
+  "event_count": 1344,
+  "charges_cents": 18315020,
+  "refunds_cents": 458304,
+  "net_cash_cents": 17856716
+}
